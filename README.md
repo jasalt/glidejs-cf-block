@@ -29,3 +29,14 @@ Ref https://github.com/timber/timber/discussions/3035
 ## Correct Carbon Fields init in plugin context?
 
 Does `\Carbon_Fields\Carbon_Fields::boot();` fail if called multiple times?
+
+
+# Styles
+
+Currently depends on some TailwindCSS classes from https://tailwind-lite.com/ which needs to be loaded separately to theme..
+
+```
+<link rel="stylesheet" href="https://cdn.tailwind-lite.com/1.0.2.css" />
+```
+
+Probably would be best to unstyle it before using as a generic block plugin. GlideJS also brings some of it's own style stuff of which some is required.

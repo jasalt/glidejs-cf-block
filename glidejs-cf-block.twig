@@ -1,6 +1,7 @@
 {# HTML outputted by the plugin with context variables passed in $context object at
   Timber::render('glidejs-cf-block.twig', $context); #}
 
+
 <script src="{{ plugin_path }}node_modules/@glidejs/glide/dist/glide.min.js"></script>
 <link rel="stylesheet" href="{{ plugin_path }}node_modules/@glidejs/glide/dist/css/glide.core.min.css">
 <!-- <link rel="stylesheet" href="{{ plugin_path }}node_modules/@glidejs/glide/dist/css/glide.theme.min.css"> -->
@@ -15,7 +16,7 @@
         <a href="">
 
           <li class="glide__slide list-none">
-            <div class="card bg-base-100 m-1">
+            <div class="card m-1">
               <figure>
                 <img
                   src="{{ function("wp_get_attachment_image_src", fields.image, 'full' ) | first }}"
