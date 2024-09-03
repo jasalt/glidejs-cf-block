@@ -11,16 +11,16 @@
 
   <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
-      {# for print in prints #}
+      {% for image_url in images %}
 
       <li class="glide__slide">
         <img
-          src="{{ function("wp_get_attachment_image_src", fields.image, 'full' ) | first }}"
-          alt="todo-alt-text"
-          class="" />
+          src="{{ image_url }}"
+          alt="alt"
+          class="">
       </li>
 
-      {# endfor #}
+      {% endfor %}
     </ul>
   </div>
 

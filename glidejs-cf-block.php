@@ -22,13 +22,19 @@ function crb_attach_theme_options() {
 	Block::make( __( 'GlideJS Block' ) )
 	->add_fields( array(
 		Field::make( 'text', 'heading', __( 'Block Heading' ) ),
-		Field::make( 'image', 'image', __( 'Block Image' ) ),
+		Field::make( 'media_gallery', 'crb_slider_medias', __( 'Slider Medias' ) ),
 		Field::make( 'rich_text', 'content', __( 'Block Content' ) ),
 	) )
 		->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
 			$context = Timber::context();
 			$context['fields'] = $fields;
 			$context['attributes'] = $attributes;
+
+			$context['images'] = [];
+
+			foreach ($fields['crb_slider_medias'] as $image_id) {
+				$context['images'][] = wp_get_attachment_image_src($image_id, 'full')[0];
+			}
 
 			// Get relative path to the plugin
 			// TODO __FILE__ not accessible in Twig, workaround
