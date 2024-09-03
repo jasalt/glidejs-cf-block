@@ -1,25 +1,27 @@
 {# HTML outputted by the plugin with context variables passed in $context object at
   Timber::render('glidejs-cf-block.twig', $context); #}
 
-
 <div class="block">
 
-  <!-- <pre>
-       {{  dump(fields) }}
-       </pre> -->
+  <!-- <pre> {{  dump(fields) }} </pre> -->
 
   <div class="block__heading">
     <!-- <?php echo esc_html( $fields['heading'] ); ?> -->
   	<h1>{{ fields.heading }}</h1>
   </div><!-- /.block__heading -->
 
+  <!-- Field data includes image ID which is little bit cumbersome to convert
+       into source url with raw PHP. Might be useful to prepare it as string or
+       Timber\Image object beforehand. -->
+
   <div class="block__image">
   	<!-- <?php echo wp_get_attachment_image( $fields['image'], 'full' ); ?> -->
-    Image ID: {{  fields.image }}
+    <img src="{{ function("wp_get_attachment_image_src", fields.image, 'full' ) | first }}">
   </div><!-- /.block__image -->
 
   <div class="block__content">
   	<!-- <?php echo apply_filters( 'the_content', $fields['content'] ); ?> -->
     <p>{{ fields.content }}</p>
-  </div><!-- /.block__content -->
-</div><!-- /.block -->
+  </div>
+
+</div>
