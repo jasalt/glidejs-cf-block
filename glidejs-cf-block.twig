@@ -9,27 +9,16 @@
 
 <div class="glide">
 
-  <div class="glide__track pb-16" data-glide-el="track" id="slider-3d-home">
+  <div class="glide__track" data-glide-el="track">
     <ul class="glide__slides">
       {# for print in prints #}
 
-        <a href="">
-
-          <li class="glide__slide list-none">
-            <div class="card m-1">
-              <figure>
-                <img
-                  src="{{ function("wp_get_attachment_image_src", fields.image, 'full' ) | first }}"
-                  alt="todo-alt-text"
-                  class="object-cover mx-auto h-64 " />
-              </figure>
-              <div class="card-body m-0">
-                <p class="truncate text-sm">{{ fields.heading }}</p>
-              </div>
-            </div>
-          </li>
-        </a>
-
+      <li class="glide__slide">
+        <img
+          src="{{ function("wp_get_attachment_image_src", fields.image, 'full' ) | first }}"
+          alt="todo-alt-text"
+          class="" />
+      </li>
 
       {# endfor #}
     </ul>
