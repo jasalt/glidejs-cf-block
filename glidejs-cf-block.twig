@@ -9,7 +9,7 @@
 
 <div class="glide">
 
-  <div class="glide__track" data-glide-el="track" class="">
+  <div class="glide__track pb-20" data-glide-el="track" class="">
     <ul class="glide__slides">
       {% for image_url in images %}
 
@@ -36,7 +36,10 @@
 <style>
   /* TODO Could Tailwind class do this? */
   .glide__bullet.glide__bullet--active {
-	  background-color: var(--jkl-brand-color-primary);
+	  background-color: lightgray;
+  }
+  .glide__bullet.glide__bullet {
+    /* background-color: lightgray; */
   }
 </style>
 
