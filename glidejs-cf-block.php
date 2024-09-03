@@ -30,6 +30,10 @@ function crb_attach_theme_options() {
 			$context['fields'] = $fields;
 			$context['attributes'] = $attributes;
 
+			// Get relative path to the plugin
+			// TODO __FILE__ not accessible in Twig, workaround
+			$context['plugin_path'] = plugin_dir_url( __FILE__ );
+
 			echo Timber::render('glidejs-cf-block.twig', $context);
 	} );
 }
