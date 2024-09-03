@@ -26,9 +26,8 @@ function crb_attach_theme_options() {
 		Field::make( 'rich_text', 'content', __( 'Block Content' ) ),
 	) )
 		->set_render_callback( function ( $fields, $attributes, $inner_blocks ) {
-			$context = Timber::get_context();
+			$context = Timber::context();
 			$context['fields'] = $fields;
-			// $context['image'] = get_image($context['fields']['image']);
 			$context['attributes'] = $attributes;
 
 			echo Timber::render('glidejs-cf-block.twig', $context);
