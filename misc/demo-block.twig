@@ -1,0 +1,21 @@
+<div class="block">
+
+  <!-- <pre> {#  dump(fields) #} </pre> -->
+
+  <div class="block__heading">
+  	<h1>{{ fields.heading }}</h1>
+  </div><!-- /.block__heading -->
+
+  <!-- Field data includes image ID which is little bit cumbersome to convert
+       into source url with raw PHP. Might be useful to prepare it as string or
+       Timber\Image object beforehand. -->
+
+  <div class="block__image">
+    <img src="{{ function("wp_get_attachment_image_src", fields.image, 'full' ) | first }}">
+  </div><!-- /.block__image -->
+
+  <div class="block__content">
+    <p>{{ fields.content }}</p>
+  </div>
+
+</div>
