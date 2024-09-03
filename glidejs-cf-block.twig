@@ -4,12 +4,12 @@
 
 <script src="{{ plugin_path }}node_modules/@glidejs/glide/dist/glide.min.js"></script>
 <link rel="stylesheet" href="{{ plugin_path }}node_modules/@glidejs/glide/dist/css/glide.core.min.css">
-<!-- <link rel="stylesheet" href="{{ plugin_path }}node_modules/@glidejs/glide/dist/css/glide.theme.min.css"> -->
+<link rel="stylesheet" href="{{ plugin_path }}node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
 
 
 <div class="glide">
 
-  <div class="glide__track" data-glide-el="track">
+  <div class="glide__track" data-glide-el="track" class="">
     <ul class="glide__slides">
       {% for image_url in images %}
 
@@ -17,7 +17,7 @@
         <img
           src="{{ image_url }}"
           alt="alt"
-          class="">
+          class="h-64 w-80 object-cover mx-auto">
       </li>
 
       {% endfor %}
@@ -25,8 +25,9 @@
   </div>
 
   <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
-    {% for print in prints %}
-      <label class="slider__bullet glide__bullet size-3 bg-slate-400 hover:bg-slate-500" data-glide-dir="={{ loop.index0 }}"></label>
+    {% for i in images %}
+      <label class="slider__bullet glide__bullet size-3 bg-slate-400 hover:bg-slate-500"
+        data-glide-dir="={{ loop.index0 }}"></label>
     {% endfor %}
   </div>
 
@@ -43,7 +44,7 @@
   new Glide('.glide', {
     type: 'carousel',
     startAt: 0,
-    perView: 5,
+    perView: 3,
     autoplay: 7000,
     hoverpause: true,
     keyboard: true,
@@ -51,12 +52,12 @@
     breakpoints: {
       1280: {
         perView: 3,
-        autoplay: 6000,
+        autoplay: 7000,
       },
       720: {
         startAt: 1,  /* May show last one that gets wrapped */
-        perView: 2,
-        autoplay: 4000,
+        perView: 1,
+        autoplay: 5000,
       }
     }
   }).mount()
