@@ -1,8 +1,10 @@
-Experimental WordPress image carousel plugin using Carbon Fields and Timber.
+Experimental WordPress image carousel plugin using [Carbon Fields](https://carbonfields.net/) and [Timber](https://upstatement.com/timber/).
 
-Allows re-using Twig PHP template code in WordPress CMS side "Gutenberg Blocks".
+Allows re-using Twig PHP template code in WordPress CMS side "Gutenberg Blocks" where each block instance added to layout maintains it's own data separately from others.
 
-Useful for backend devs not requiring directly messing with the WP React Block API's.
+User can also convert a single block instance into a global "Pattern" which can sync/share data globally between Pattern instances, eg. across different pages or language versions.
+
+Useful for backend devs, not requiring directly messing with the WP React Block API's.
 
 Block editor view:
 ![Block editor view](misc/editor-screenshot.png "Block editor view")
