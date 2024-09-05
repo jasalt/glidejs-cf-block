@@ -1,4 +1,16 @@
-Experimental image carousel block plugin...
+Experimental WordPress image carousel plugin using Carbon Fields and Timber.
+
+Allows re-using Twig PHP template code in WordPress CMS side "Gutenberg Blocks".
+
+Useful for backend devs not requiring directly messing with the WP React Block API's.
+
+Block editor view:
+![Block editor view](misc/editor-screenshot.png "Block editor view")
+
+Front end view:
+![Front end demo](misc/front-end-demo.gif "Front end view")
+
+Live demo at https://kasviklaani.fi/ front page.
 
 # Installation
 
